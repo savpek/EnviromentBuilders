@@ -39,14 +39,14 @@ function Installer([string]$scriptPath) {
     ConfigurePowerShellProfile
 
     CreateIfMissingDir "${env:APPDATA}\Dexpot\Profile\"
-    Copy-Item "$($installerPaths.CustomShellProfile)\InstallationFiles\*.dxp" "${env:APPDATA}\Dexpot\Profile\" -Force
+    Copy-Item "$scriptPath\InstallationFiles\*.dxp" "${env:APPDATA}\Dexpot\Profile\" -Force
 
     function InstallWarmUp() {
         warmup addTextReplacement __CHOCO_PKG_OWNER_NAME__ "Savpek"
         warmup addTextReplacement __CHOCO_PKG_OWNER_REPO__ "savpek/Powershell-Profile/InstallationFiles"
         warmup addTextReplacement __CHOCO_AUTO_PKG_OWNER_REPO__ "savpek/Powershell-Profile/InstallationFiles"
 
-        Copy-Item "$scriptPath\InstallationFiles\*" "C:\CODE\_templates\"
+        Copy-Item "$scriptPath\InstallationFiles\chocolateyTemplate\*" "C:\CODE\_templates\chocolatey"
     }
     InstallWarmUp
 
