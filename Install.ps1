@@ -1,7 +1,5 @@
 Set-StrictMode -Version Latest
 
-$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition;
-
 function Installer([string]$scriptPath) {
     . "$scriptPath\InstallFunctions\CommonFunctions.ps1"
     . "$scriptPath\InstallFunctions\CommonPaths.ps1"
@@ -48,7 +46,7 @@ function Installer([string]$scriptPath) {
         warmup addTextReplacement __CHOCO_PKG_OWNER_REPO__ "savpek/Powershell-Profile/InstallationFiles"
         warmup addTextReplacement __CHOCO_AUTO_PKG_OWNER_REPO__ "savpek/Powershell-Profile/InstallationFiles"
 
-        Copy-Item "$($installerPaths.CustomShellProfile)\InstallationFiles\*" "C:\CODE\_templates\"
+        Copy-Item "$scriptPath\InstallationFiles\*" "C:\CODE\_templates\"
     }
     InstallWarmUp
 
@@ -56,6 +54,6 @@ function Installer([string]$scriptPath) {
     "Open dexpot and set Savpek profile, this step isn't automated."
 }
 
-Installer $scriptPath
+Installer (split-path -parent $MyInvocation.MyCommand.Definition)
 
 . $profile
