@@ -27,7 +27,6 @@ function Installer([string]$scriptPath) {
     Install "linqPad4"
     Install "LogExpert"
     Install "Dexpot"
-    Install "warmup" "nuget.exe"
 
     function ConfigurePowerShellProfile() {
         Write-Host "Install powershell profile." -ForegroundColor Green
@@ -40,15 +39,6 @@ function Installer([string]$scriptPath) {
 
     CreateIfMissingDir "${env:APPDATA}\Dexpot\Profile\"
     Copy-Item "$scriptPath\InstallationFiles\*.dxp" "${env:APPDATA}\Dexpot\Profile\" -Force
-
-    function InstallWarmUp() {
-        warmup addTextReplacement __CHOCO_PKG_OWNER_NAME__ "Savpek"
-        warmup addTextReplacement __CHOCO_PKG_OWNER_REPO__ "savpek/Powershell-Profile/InstallationFiles"
-        warmup addTextReplacement __CHOCO_AUTO_PKG_OWNER_REPO__ "savpek/Powershell-Profile/InstallationFiles"
-
-        Copy-Item "$scriptPath\InstallationFiles\chocolateyTemplate\*" "C:\CODE\_templates\chocolatey"
-    }
-    InstallWarmUp
 
     Write-Host "Notes:" -ForegroundColor Green
     "Open dexpot and set Savpek profile, this step isn't automated."
