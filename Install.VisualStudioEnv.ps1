@@ -5,6 +5,10 @@ function Installer($scriptPath) {
     Install VisualStudio2012Premium
     Install resharper
     Install "Dogtail.VS2012.3"
+    Install "python"
+    Install "nodejs.install"
+    Install "pycharm.install"
+    Install "webstorm.install"
 }
 
 Installer (split-path -parent $MyInvocation.MyCommand.Definition)
