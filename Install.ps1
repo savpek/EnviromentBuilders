@@ -38,7 +38,7 @@ function Installer([string]$scriptPath) {
     ConfigurePowerShellProfile
 
     CreateIfMissingDir "${env:APPDATA}\Dexpot\Profile\"
-    Copy-Item "$scriptPath\InstallationFiles\*.dxp" "${env:APPDATA}\Dexpot\Profile\" -Force
+    Copy-Item "$scriptPath\SoftwareProfiles\Dexpot\*.dxp" "${env:APPDATA}\Dexpot\Profile\" -Force
 
     Write-Host "Notes:" -ForegroundColor Green
     "Open dexpot and set Savpek profile, this step isn't automated."

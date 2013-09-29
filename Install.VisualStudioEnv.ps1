@@ -9,6 +9,8 @@ function Installer($scriptPath) {
     Install "nodejs.install"
     Install "pycharm.install"
     Install "webstorm.install"
+    Install "easy.install" "easy_install.exe"
+    Install "pip"
 }
 
 Installer (split-path -parent $MyInvocation.MyCommand.Definition)
