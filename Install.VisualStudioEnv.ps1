@@ -7,8 +7,8 @@ function Installer($scriptPath) {
     Install "Dogtail.VS2012.3"
     Install "python"
     Install "nodejs.install"
-    Install "pycharm.install"
-    Install "webstorm.install"
+    Install "pycharm"
+    Install "webstorm"
     Install "easy.install" "easy_install.exe"
     Install "pip"
 }
