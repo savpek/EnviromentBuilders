@@ -27,6 +27,7 @@ function Installer([string]$scriptPath) {
     Install "linqPad4"
     Install "LogExpert"
     Install "Dexpot"
+    Install "winscp"
 
     function ConfigurePowerShellProfile() {
         Write-Host "Install powershell profile." -ForegroundColor Green
