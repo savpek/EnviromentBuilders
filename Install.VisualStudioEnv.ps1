@@ -4,7 +4,6 @@ function Installer($scriptPath) {
 
     Install VisualStudio2013Professional
     Install resharper
-    Install "Dogtail.VS2012.3"
     Install "python"
     Install "nodejs.install"
     Install "pycharm"
