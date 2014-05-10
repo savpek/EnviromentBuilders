@@ -29,7 +29,6 @@ function Installer([string]$scriptPath) {
     Install "greenshot"
     Install "linqPad4"
     Install "LogExpert"
-    Install "Dexpot"
     Install "winscp"
 
     function ConfigurePowerShellProfile() {
