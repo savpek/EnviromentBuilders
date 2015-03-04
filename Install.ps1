@@ -27,7 +27,6 @@ function Installer([string]$scriptPath) {
     Install "putty" "putty.exe"
     Install "adobereader"
     Install "greenshot"
-    Install "linqPad4"
     Install "LogExpert"
     Install "winscp"
 
