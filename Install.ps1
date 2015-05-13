@@ -1,7 +1,6 @@
 Set-StrictMode -Version Latest
 
-# This is hotfix for chocolatey bug.
-$env:ChocolateyInstall = "C:\Chocolatey"
+$env:Path += ";C:\programdata\chocolatey\bin"
 
 . "$PsScriptRoot\InstallFunctions\CommonFunctions.ps1"
 . "$PsScriptRoot\InstallFunctions\CommonPaths.ps1"
