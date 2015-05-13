@@ -1,7 +1,5 @@
 Set-StrictMode -Version Latest
 
-$env:Path += ";C:\programdata\chocolatey\bin"
-
 . "$PsScriptRoot\InstallFunctions\CommonFunctions.ps1"
 . "$PsScriptRoot\InstallFunctions\CommonPaths.ps1"
 
@@ -15,6 +13,10 @@ function InstallChocolatey() {
 }
 
 InstallChocolatey
+
+$env:Path += ";C:\programdata\chocolatey\bin"
+choco feature enable -n allowGlobalConfirmation 
+
 Install "git" "git.exe"
 Install "poshgit"
 Install "notepad2"
@@ -36,6 +38,5 @@ function ConfigurePowerShellProfile() {
     . "$($installerPaths.CustomShellProfile)\Install.ps1"
 }
 ConfigurePowerShellProfile
-
 
 . $profile
