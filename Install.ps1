@@ -17,7 +17,7 @@ InstallChocolatey
 $env:Path += ";C:\programdata\chocolatey\bin"
 choco feature enable -n allowGlobalConfirmation 
 
-Install "git" "git.exe"
+Install "git.commandline" "git.exe"
 Install "notepad2"
 Install "winmerge" "WinMergeU.exe"
 Install "7Zip"
